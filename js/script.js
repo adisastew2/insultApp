@@ -18,8 +18,18 @@ function insult() {
 	var desTwo = document.getElementById("adj2")
 	var thing = document.getElementById("noun")
 
-	desOne.innerHTML = adjOne[Math.floor(Math.random() * adjOne.length)].wrd
-	desTwo.innerHTML = adjTwo[Math.floor(Math.random() * adjTwo.length)].wrd
-	thing.innerHTML = noun[Math.floor(Math.random() * noun.length)].wrd
+	// placeholders
+	var first = Math.floor(Math.random() * adjOne.length)
+	var sec = Math.floor(Math.random() * adjTwo.length)
+	var third = Math.floor(Math.random() * noun.length)
 
+	// change text in buttons to insults
+	desOne.innerHTML = adjOne[first].wrd
+	desTwo.innerHTML = adjTwo[sec].wrd
+	thing.innerHTML = noun[third].wrd
+
+	// definitions
+	desOne.setAttribute("data-content", adjOne[first].def)
+	desTwo.setAttribute("data-content", adjTwo[sec].def)
+	thing.setAttribute("data-content", noun[third].def)
 }
