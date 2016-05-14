@@ -34,4 +34,7 @@ function insult() {
 	desOne.setAttribute("data-content", adjOne[first].def)
 	desTwo.setAttribute("data-content", adjTwo[sec].def)
 	thing.setAttribute("data-content", noun[third].def)
+
+	//bg switch
+	
 }
