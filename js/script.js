@@ -4,8 +4,8 @@ $(document).ready(function(){
 });
 
 
-// insult randomizer function
-function insult() {
+// insult randomizer function in event listener
+document.getElementById("newBtn").addEventListener("click", function insult() {
 
 	// adj1 array
 	var adjOne = [{wrd: "Apish", def: "Foolish; resembling an ape"}, {wrd: "Artless", def: "Crude, unskillful"}, {wrd: "Beslubbering", def: "Smear, smeared; slobbering"}, {wrd: "Calumniating", def: "Uttering maliciously false statements"}, {wrd: "Cautelous", def: "Crafty, deceitful"}, {wrd: "Churlish", def: "Rude, vulgar"}, {wrd: "Coldblooded", def: "Emotionless"}, {wrd: "Concupiscible", def: "Desirous, lustful"}, {wrd: "Covetous", def: "Greedy; envious of the posessions of others"}, {wrd: "Crudy", def: "Thick, as in 'curdy'"}, {wrd: "Cuckoldly", def: "Haplessly victimized"}, {wrd: "Deceptious", def: "Deceiving, delusive"}, {wrd: "Degenerate", def: "Lacking morals"}, {wrd: "Facinerious", def: "Extremely wicked and vile"}, {wrd: "Fawning", def: "Giving exaggerated praise to gain favor"}, {wrd: "Finical", def: "Foppish in matters of dress; fussily fastidious"}, {wrd: "Fusty", def: "Moldy, stale"}, {wrd: "Goatish", def: "Lustful"}, {wrd: "Gorbellied", def: "Big bellied, fat paunched"}, {wrd: "Greasy", def: "Oily; insincerely polite"}, {wrd: "Heinous", def: "Outrageously wicked, odious, atrocious"}, {wrd: "Incontinent", def: "Indulging lust without restraint"}, {wrd: "Inexecrable", def: "Unable to be overly execrated or detested"}, {wrd: "Insolent", def: "Rude, disrespectful"}, {wrd: "Lecherous", def: "Excessively sex-driven"}, {wrd: "Lisping", def: "Speaking childishly, or affectedly"}, {wrd: "Loathly", def: "Disgusting, repuslive"}, {wrd: "Lubberly", def: "Awkward, clumsy, loutish"}, {wrd: "Lumpish", def: "Poorly formed; stupid"}, {wrd: "Mammering", def: "Hesitating, stammering"}, {wrd: "Musty", def: "Moldy, stale; to emit a bad smell"}, {wrd: "Naughty", def: "Wicked, worthless; had a stronger meaning in Shakespeare's time"}, {wrd: "Obscene", def: "Repugnant, morally offensive"}, {wrd: "Overgorged", def: "Gluttonously stuffed"}, {wrd: "Panderly", def: "Small; insignificant"}, {wrd: "Pestiferous", def: "Annoying, troublesome; dangerous to society; associated with the 'pest' or 'plague'"}, {wrd: "Plumpy", def: "Fat"}, {wrd: "Puking", def: "Vomiting"}, {wrd: "Rascally", def: "Untrustworthy"}, {wrd: "Reeky", def: "Reeking, Bad-smelling"}, {wrd: "Sanctimonious", def: "Hypocritically self-righteous"}, {wrd: "Sickly", def: "Ill, feeble"}, {wrd: "Slobbery", def: "Wet, slovenly, muddy"}, {wrd: "Sneaping", def: "Biting, nipping"}, {wrd: "Spongy", def: "Soft"}, {wrd: "Stinking", def: "Foul-smelling"}, {wrd: "Superserviceable", def: "Overeager to be of service, officious"}, {wrd: "Thrasonical", def: "Boastful, bragging; named after 'Thraso,' a braggart soldier in an ancient Roman comedy"}, {wrd: "Unhandsome", def: "Ugly"}, {wrd: "Unwiped", def: "Unwashed, unclean"}, {wrd: "Viperous", def: "Venomous, malignant"}, {wrd: "Wanton", def: "Promiscuous, immodest"}, {wrd: "Warped", def: "Twisted, deformed"}, {wrd: "Witless", def: "Without intelligence, stupid"}]
@@ -35,12 +35,21 @@ function insult() {
 	desTwo.setAttribute("data-content", adjTwo[sec].def)
 	thing.setAttribute("data-content", noun[third].def)
 
-	//img switch
+	// img switch
 	var funStuff = ["img/bird.jpg", "img/bunny.jpg", "img/cat.jpg", "img/dog.jpg", "img/mouse.png", "img/panda.png"]
 	var flip = Math.floor(Math.random() * funStuff.length)
 	var set = funStuff[flip]
 	var grab = document.getElementById("myImg")
 
 	grab.setAttribute("src", set)
-	
-}
+
+	// bobble head
+	var shake = document.getElementById("newBtn")
+	shake.className+= " tada"
+
+	setTimeout(function(){ shake.classList.remove("tada"); }, 1000);
+	});
+
+
+
+
