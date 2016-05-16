@@ -35,13 +35,6 @@ document.getElementById("newBtn").addEventListener("click", function insult() {
 	desTwo.setAttribute("data-content", adjTwo[sec].def)
 	thing.setAttribute("data-content", noun[third].def)
 
-	// img switch
-	var funStuff = ["img/bird.jpg", "img/bunny.jpg", "img/cat.jpg", "img/dog.jpg", "img/mouse.png", "img/panda.png"]
-	var flip = Math.floor(Math.random() * funStuff.length)
-	var set = funStuff[flip]
-	var grab = document.getElementById("myImg")
-
-	grab.setAttribute("src", set)
 
 	// bobble head
 	var shake = document.getElementById("newBtn")
